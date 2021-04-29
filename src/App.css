@@ -1,5 +1,46 @@
-.App {
+ul,
+li {
+  list-style: none;
+}
+
+h4 {
   text-align: center;
+}
+
+body {
+  font-family: "nanumsquare";
+}
+
+.black-nav {
+  background: black;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.boardList {
+  font-weight: 600;
+  font-size: 20px;
+  padding-bottom: 2px;
+}
+
+.modal {
+  text-align: center;
+  background: skyblue;
+  width: 70%;
+  margin: auto;
+  padding: 20px;
+}
+
+.btns {
+  text-align: center;
+}
+
+.btns button:first-child {
+  margin-right: 5px;
 }
 
 .App-logo {
