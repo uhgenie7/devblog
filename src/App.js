@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   let posts = "데이터바인딩";
-  let [good, change] = useState(0);
+  let [good, change] = useState([0, 0, 0]);
   let [title, changeTitle] = useState([
     "오늘 한 일",
     "내일 할 일",
@@ -25,7 +25,7 @@ function App() {
         <h1>개발 Blog</h1>
       </div>
       <ul className="boardList">
-        {title.map(function (title) {
+        {title.map(function (title, num) {
           return (
             <ul>
               <li>
@@ -33,12 +33,14 @@ function App() {
                   {title}
                   <span
                     onClick={() => {
-                      change(good + 1);
+                      let numCopy = [...good];
+                      numCopy[num]++;
+                      change(numCopy);
                     }}
                   >
                     👍
                   </span>
-                  {good}
+                  {good[num]}
                 </h3>
               </li>
               <li>
