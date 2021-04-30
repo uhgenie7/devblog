@@ -10,6 +10,7 @@ function App() {
     "내일 할 일",
     "모레 할 일",
   ]);
+  let [clickTitle, titleChange] = useState(0);
 
   // 모달창 켜고 닫는 스위치
   let [modal, modalChange] = useState(false);
@@ -54,6 +55,27 @@ function App() {
       <div className="btns">
         <button
           onClick={() => {
+            titleChange(0);
+          }}
+        >
+          버튼1
+        </button>
+        <button
+          onClick={() => {
+            titleChange(1);
+          }}
+        >
+          버튼2
+        </button>
+        <button
+          onClick={() => {
+            titleChange(2);
+          }}
+        >
+          버튼3
+        </button>
+        <button
+          onClick={() => {
             modalChange(!modal);
           }}
         >
@@ -61,15 +83,15 @@ function App() {
         </button>
         <button onClick={changeTitleFunction}>정렬 버튼</button>
       </div>
-      {modal === true ? <Modal /> : null}
+      {modal === true ? <Modal titles={title} clickTitle={clickTitle} /> : null}
     </div>
   );
 }
 
-function Modal() {
+function Modal(props) {
   return (
     <div className="modal">
-      <h2>제목</h2>
+      <h2>{props.titles[props.clickTitle]}</h2>
       <p>날짜</p>
       <p>상세 내용</p>
     </div>
