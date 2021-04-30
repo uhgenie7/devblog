@@ -43,6 +43,11 @@ body {
   margin-right: 5px;
 }
 
+.inputValue {
+  display: block;
+  margin: 5px auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -11,7 +11,7 @@ function App() {
     "모레 할 일",
   ]);
   let [clickTitle, titleChange] = useState(0);
-
+  let [inputValue, inputChange] = useState("");
   // 모달창 켜고 닫는 스위치
   let [modal, modalChange] = useState(false);
   function changeTitleFunction() {
@@ -28,7 +28,7 @@ function App() {
       <ul className="boardList">
         {title.map(function (title, num) {
           return (
-            <ul>
+            <ul key={num}>
               <li>
                 <h3
                   onClick={() => {
@@ -56,6 +56,14 @@ function App() {
           );
         })}
       </ul>
+      <input
+        className="inputValue"
+        placeholder={inputValue}
+        onChange={(e) => {
+          inputChange(e.target.value);
+        }}
+      />
+      {inputValue}
       <div className="btns">
         <button
           onClick={() => {
