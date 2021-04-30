@@ -43,9 +43,25 @@ body {
   margin-right: 5px;
 }
 
-.inputValue {
+.publish {
   display: block;
   margin: 5px auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.publish input {
+  width: 30%;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.publish button {
+  width: 100px;
+  padding: 5px;
 }
 
 .App-logo {

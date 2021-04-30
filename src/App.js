@@ -3,7 +3,6 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  let posts = "데이터바인딩";
   let [good, change] = useState([0, 0, 0]);
   let [title, changeTitle] = useState([
     "오늘 한 일",
@@ -56,14 +55,26 @@ function App() {
           );
         })}
       </ul>
-      <input
-        className="inputValue"
-        placeholder={inputValue}
-        onChange={(e) => {
-          inputChange(e.target.value);
-        }}
-      />
-      {inputValue}
+      {/* 글제목 추가 */}
+      <div className="publish">
+        <input
+          type="text"
+          onChange={(e) => {
+            inputChange(e.target.value);
+          }}
+        />
+        {inputValue}
+        <button
+          onClick={() => {
+            let pushArray = [...title];
+            pushArray.unshift(inputValue);
+            changeTitle(pushArray);
+          }}
+        >
+          저장
+        </button>
+      </div>
+      {/* 모달창 버튼 */}
       <div className="btns">
         <button
           onClick={() => {
