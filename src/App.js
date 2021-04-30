@@ -30,7 +30,11 @@ function App() {
           return (
             <ul>
               <li>
-                <h3>
+                <h3
+                  onClick={() => {
+                    titleChange(num);
+                  }}
+                >
                   {title}
                   <span
                     onClick={() => {
@@ -53,27 +57,6 @@ function App() {
         })}
       </ul>
       <div className="btns">
-        <button
-          onClick={() => {
-            titleChange(0);
-          }}
-        >
-          버튼1
-        </button>
-        <button
-          onClick={() => {
-            titleChange(1);
-          }}
-        >
-          버튼2
-        </button>
-        <button
-          onClick={() => {
-            titleChange(2);
-          }}
-        >
-          버튼3
-        </button>
         <button
           onClick={() => {
             modalChange(!modal);
